@@ -1,12 +1,16 @@
 
 import Foundation
 
+let DATE_FORMAT = "M/d/yy"
+
+enum TopCommentPrefix: String {
+    case createdBy = "// Created by"
+    case lastModifiedBy = "// Last modified by"
+}
+
 func removeTopComment(from lines: NSMutableArray) {
-    
-    guard
-        let firstLine = (lines.firstObject as? String) where firstLine.hasPrefix("//")
-        else {
-            return
+    guard let _ = getFirstLine(in: lines) else {
+        return
     }
     
     var firstEmpty = 0
@@ -21,28 +25,67 @@ func removeTopComment(from lines: NSMutableArray) {
     lines.removeObjects(in: NSRange(location: 0, length: firstEmpty))
 }
 
-func changeDate(in lines: NSMutableArray) {
-    
-    guard
-        let firstLine = (lines.firstObject as? String) where firstLine.hasPrefix("//")
-        else {
-            return
+func updateDate(in lines: NSMutableArray, with prefix: TopCommentPrefix) {
+    guard let _ = getFirstLine(in: lines) else {
+        return
     }
     
-    let dateLine = lines.first(where: {
-        return ($0 as! String).hasPrefix("//  Created by")
-    }) as! String
+    let dateLine: String?
     
-    let pattern = "\\d\\d([/])\\d\\d([/])\\d\\d\\d\\d"
-    let regex = try! RegularExpression(pattern: pattern, options: [])
+    switch prefix {
+        case .createdBy: dateLine = getCreatedByLine(in: lines)
+        case .lastModifiedBy: dateLine = getLastModifiedByLine(in: lines)
+    }
     
+    guard let oldDateLine = dateLine else {
+        return
+    }
+    
+    let pattern = "\\d{1,2}([/])\\d{1,2}([/])\\d{2,4}" // x/x/xx to xx/xx/xxxx
+    let regex = try! NSRegularExpression(pattern: pattern, options: [])
+    
+    let newLine = regex.stringByReplacingMatches(in: oldDateLine, options: [], range: oldDateLine.fullRange, withTemplate: today(with: DATE_FORMAT))
+    
+    lines.replaceObject(at: lines.index(of: oldDateLine), with: newLine)
+}
+
+func addLastModifiedBy(in lines: NSMutableArray) {
+    guard let _ = getFirstLine(in: lines), let createdByLine = getCreatedByLine(in: lines) else {
+        return
+    }
+    
+    if let _ = getLastModifiedByLine(in: lines) {
+        updateDate(in: lines, with: TopCommentPrefix.lastModifiedBy)
+    } else {
+        let lastModifiedByLine = "//  Last modified by \(NSFullUserName()) on \(today(with: DATE_FORMAT))."
+        lines.insert(lastModifiedByLine, at: lines.index(of: createdByLine) + 1)
+    }
+}
+
+
+// MARK: Helper functions
+
+private func getFirstLine(in lines: NSMutableArray) -> String? {
+    guard let firstLine = (lines.firstObject as? String), firstLine.hasPrefix("//") else {
+        return nil
+    }
+    
+    return firstLine
+}
+
+private func getCreatedByLine(in lines: NSMutableArray) -> String? {
+    return lines.first(where: { ($0 as! String).hasPrefix("//  Created by") }) as? String
+}
+
+private func getLastModifiedByLine(in lines: NSMutableArray) -> String? {
+    return lines.first(where: { ($0 as! String).hasPrefix("//  Last modified by") }) as? String
+}
+
+private func today(with dateFormat: String) -> String {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd/MM/yyyy"
-    let today = dateFormatter.string(from: Date())
+    dateFormatter.dateFormat = dateFormat
     
-    let newLine = regex.stringByReplacingMatches(in: dateLine, options: [], range: dateLine.fullRange, withTemplate: today)
-    
-    lines.replaceObject(at: lines.index(of: dateLine), with: newLine)
+    return dateFormatter.string(from: Date())
 }
 
 

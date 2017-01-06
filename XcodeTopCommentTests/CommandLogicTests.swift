@@ -66,7 +66,7 @@ class CommandLogicTests: XCTestCase {
             "import Foundation"
             ])
         
-        changeDate(in: lines)
+        updateDate(in: lines)
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -94,7 +94,7 @@ class CommandLogicTests: XCTestCase {
             "some code"
             ])
         
-        changeDate(in: lines)
+        updateDate(in: lines)
         
         let expected = [
             "import Foundation",

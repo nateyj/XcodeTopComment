@@ -38,13 +38,29 @@
 					<key>XCSourceEditorCommandName</key>
 					<string>Remove top comment</string>
 				</dict>
+                <dict>
+                    <key>XCSourceEditorCommandClassName</key>
+                    <string>$(PRODUCT_MODULE_NAME).SourceEditorCommand</string>
+                    <key>XCSourceEditorCommandIdentifier</key>
+                    <string>com.alejandromp.XcodeTopComment.TopCommentExtension.AddLastModifiedBy</string>
+                    <key>XCSourceEditorCommandName</key>
+                    <string>Add 'Last modified by' line</string>
+                </dict>
+                <dict>
+                    <key>XCSourceEditorCommandClassName</key>
+                    <string>$(PRODUCT_MODULE_NAME).SourceEditorCommand</string>
+                    <key>XCSourceEditorCommandIdentifier</key>
+                    <string>com.alejandromp.XcodeTopComment.TopCommentExtension.UpdateDateModified</string>
+                    <key>XCSourceEditorCommandName</key>
+                    <string>Update date last modified to today's date</string>
+                </dict>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SourceEditorCommand</string>
 					<key>XCSourceEditorCommandIdentifier</key>
 					<string>com.alejandromp.XcodeTopComment.TopCommentExtension.ChangeDate</string>
 					<key>XCSourceEditorCommandName</key>
-					<string>Change date to Today</string>
+					<string>Change creation date to today's date</string>
 				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
