@@ -227,27 +227,27 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Alejandro Martinez";
 				TargetAttributes = {
 					FB982D1C1D1BD0080043870C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = WRQMG7GP6L;
+						DevelopmentTeam = E5QLQ9VDQN;
 						DevelopmentTeamName = "Alejandro Martinez";
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					FB982D2B1D1BD0090043870C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = WRQMG7GP6L;
+						DevelopmentTeam = E5QLQ9VDQN;
 						DevelopmentTeamName = "Alejandro Martinez";
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						TestTargetID = FB982D1C1D1BD0080043870C;
 					};
 					FB982D3E1D1BD0140043870C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = WRQMG7GP6L;
+						DevelopmentTeam = E5QLQ9VDQN;
 						DevelopmentTeamName = "Alejandro Martinez";
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -367,8 +367,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -414,8 +416,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -445,6 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = XcodeTopComment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alejandromp.XcodeTopComment;
@@ -460,6 +465,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = XcodeTopComment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alejandromp.XcodeTopComment;
@@ -474,6 +480,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = XcodeTopCommentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alejandromp.XcodeTopCommentTests;
@@ -489,6 +496,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = XcodeTopCommentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alejandromp.XcodeTopCommentTests;
@@ -504,6 +512,7 @@
 				CODE_SIGN_ENTITLEMENTS = TopCommentExtension/TopCommentExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = TopCommentExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -520,6 +529,7 @@
 				CODE_SIGN_ENTITLEMENTS = TopCommentExtension/TopCommentExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = TopCommentExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
