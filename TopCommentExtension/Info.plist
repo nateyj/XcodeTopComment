@@ -58,7 +58,7 @@
 					<key>XCSourceEditorCommandClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SourceEditorCommand</string>
 					<key>XCSourceEditorCommandIdentifier</key>
-					<string>com.alejandromp.XcodeTopComment.TopCommentExtension.ChangeDate</string>
+					<string>com.alejandromp.XcodeTopComment.TopCommentExtension.UpdateCreationDate</string>
 					<key>XCSourceEditorCommandName</key>
 					<string>Change creation date to today's date</string>
 				</dict>
